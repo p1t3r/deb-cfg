@@ -16,7 +16,7 @@ then
 # Check whether we run on Debian GNU/Linux 8
 elif [ $(grep -c "8" /etc/debian_version) -eq 0 ]
 then
-        printf "\n##### Sorry, this script works only on Debian GNU/Linux 8 #####\n\n"
+        printf "\nSorry, this script works only on Debian GNU/Linux 8\n\n"
         exit 1
 # Check whether username has been provided to us on the command line.
 elif [ $# -eq 0 ]
@@ -26,13 +26,11 @@ then
 else
 	OUR_USER=$1
 	clear
-        printf "\n##### Configure system... #####\n\n"
-        sleep 2
 fi
 
 
 # We install all basic packages
-printf "\nI configure now system repositories...\n";
+printf "\nConfigure system repositories...\n";
 sleep 3;
 
 if ! grep contrib /etc/apt/sources.list
@@ -41,7 +39,7 @@ then
         printf "\nMain Debian repositories has been configured.\n" &&
 	sleep 3
 else
-        printf "\nMain Debian respositories already configured.. Do nothing.\n" &&
+        printf "\nMain Debian respositories already configured... Do nothing.\n" &&
 	sleep 3
 fi
 
@@ -53,7 +51,7 @@ then
         printf "\nPalemoon Web-browser respository has been configured.\n" &&
 	sleep 3
 else
-        printf "\nPalemoon Web-browser repository already configured.. Do nothing.\n" &&
+        printf "\nPalemoon Web-browser repository already configured... Do nothing.\n" &&
 	sleep 3
 fi
 
@@ -63,7 +61,7 @@ then
         printf "\nGoogle Chrome Web-browser respository has been configured.\n" &&
 	sleep 3
 else
-	printf "\nGoogle Chrome Web-browser respository already configured.. Do nothing.\n" &&
+	printf "\nGoogle Chrome Web-browser respository already configured... Do nothing.\n" &&
 	sleep 3
 fi
 
@@ -73,11 +71,11 @@ then
         printf "\nSpider Oak One respository has been configured.\n" &&
 	sleep 3
 else
-	printf "\nSpider Oak One respository already configured.. Do nothing.\n" &&
+	printf "\nSpider Oak One respository already configured... Do nothing.\n" &&
 	sleep 3
 fi
 
-printf "\nI install and configure all the necessary packages...\n\n";
+printf "\nInstall and configure all the necessary packages...\n\n";
 sleep 3;
 
 apt-get update &&
